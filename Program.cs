@@ -16,11 +16,12 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"))
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+// configure the http request pipeline.
+if (!app.environment.isdevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.useexceptionhandler("/home/error");
 }
+
 
 
 app.UseRouting();
