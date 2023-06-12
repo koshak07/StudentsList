@@ -30,6 +30,8 @@ namespace StudentCrudV1.Models
         [MaxLength(12, ErrorMessage = "Maximum 12 characters only.")]
         public string PhoneNumber { get; set; }
 
+        
+
         [DisplayFormat(DataFormatString = "{0:MMM-dd-yy}")]
         [DisplayName("Date Registration")]
         public DateTime Date { get; set; }

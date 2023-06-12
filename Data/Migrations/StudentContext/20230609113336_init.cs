@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace StudentCrudV1.Migrations
+namespace StudentCrudV1.Data.Migrations.StudentContext
 {
-    public partial class Initial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,8 +19,8 @@ namespace StudentCrudV1.Migrations
                     StudentName = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     StudentCourse = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(50)", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -1,35 +1,49 @@
-using StudentCrudV1.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
-
+using StudentCrudV1.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("UserConnection");
+var devconnectionString = builder.Configuration.GetConnectionString("DevConnection");
+builder.Services.AddDbContext<UserDBContext>(options =>
+    options.UseSqlServer(connectionString));
 
-// Add controller
-builder.Services.AddControllersWithViews();
-
-
-//DI for DbContext
 builder.Services.AddDbContext<StudentDBContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
+    options.UseSqlServer(devconnectionString));
+
+
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<UserDBContext>();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
+{
+    app.UseMigrationsEndPoint();
+}
+else
 {
     app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
 }
 
-
+app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseRouting();
 
-
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Student}/{action=Index}/{id?}"); 
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapRazorPages();
 
 app.Run();

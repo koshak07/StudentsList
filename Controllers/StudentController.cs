@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StudentCrudV1.Data;
 using StudentCrudV1.Models;
 
 namespace StudentCrudV1.Controllers
 {
-    
 
+    [Authorize]
     public class StudentController : Controller
     {
         private readonly StudentDBContext _context;

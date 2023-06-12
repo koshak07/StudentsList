@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StudentCrudV1.Models;
 
-namespace StudentCrudV1.Models
+namespace StudentCrudV1.Data
 {
     public class StudentDBContext : DbContext
     {
