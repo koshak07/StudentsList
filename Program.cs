@@ -4,15 +4,15 @@ using StudentCrudV1.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services connection DB.
 var connectionString = builder.Configuration.GetConnectionString("UserConnection");
 var devconnectionString = builder.Configuration.GetConnectionString("DevConnection");
+
 builder.Services.AddDbContext<UserDBContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddDbContext<StudentDBContext>(options =>
     options.UseSqlServer(devconnectionString));
-
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -33,6 +33,7 @@ else
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
+
 }
 
 app.UseHttpsRedirection();
