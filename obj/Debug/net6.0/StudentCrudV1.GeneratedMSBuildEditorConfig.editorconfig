@@ -40,12 +40,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/c\#/student/StudentCrudV1/StudentCrudV1/Views/Shared/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/c\#/student/StudentCrudV1/StudentCrudV1/Views/Student/AddOrEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxBZGRPckVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/c\#/student/StudentCrudV1/StudentCrudV1/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/c\#/student/StudentCrudV1/StudentCrudV1/Views/Student/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/c\#/student/StudentCrudV1/StudentCrudV1/Views/_ViewImports.cshtml]

@@ -16,8 +16,10 @@ builder.Services.AddDbContext<StudentDBContext>(options =>
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+//Add auth
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<UserDBContext>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
